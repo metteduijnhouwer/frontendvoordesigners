@@ -1,0 +1,196 @@
+h1:first-of-type{
+    font-family: "BebasNeue-Regular";
+    font-size: 2vw;
+    width: 100%;
+    height:3vw;
+    margin-top: 1vw;
+    left:0px;
+    color:black;
+    margin-bottom:-30px;
+    background-color: black;
+    margin-left:0;
+    margin-right:0;
+    margin-bottom:1vw;
+    color:white;
+    padding-top:1vw;
+    position: relative;
+    padding-left:78vw;
+    transition: ease 2s;
+
+
+
+}
+
+.bovenkant{
+    font-family: 'Nexa Regular';
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+fieldset{
+    border:0
+}
+
+body{
+    background-color: white;
+    transition: ease 1s 0.5s;
+    margin:0;
+    overflow-x: hidden;
+}
+
+
+
+/* alle knoppen */
+
+button:first-of-type, button:nth-of-type(2), button:nth-of-type(3){
+    margin:20px;
+    width:6vw;
+    height:80px;
+    border-radius: 100px;
+    border:none;
+}
+
+button:first-of-type{
+    background-color: yellow;
+}
+button:nth-of-type(2){
+    background-color:blue;
+}
+button:nth-of-type(3){
+    background-color:green;
+}
+
+
+/* alle plaatjes */
+
+
+article > img{
+    width:220px;
+    height:200px;
+    margin: 10px;
+    display:flex;
+    box-shadow: 9px 11px 21px 1px rgba(0,0,0,0.61);
+
+}
+
+article > img:hover{
+    width:225px;
+    height:205px;
+    transition: 0.5s;
+}
+
+article:hover{
+   border:solid 1px lightgrey;
+   transition: 1.5s;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center;
+}
+
+
+/* na het klikken op een knop */
+
+
+body.geel section > .blauw,
+body.geel section > .groen,
+body.groen section > .blauw,
+body.groen section > .geel,
+body.blauw section > .geel,
+body.blauw section > .groen{
+    animation: wegdermee 2s forwards;
+}
+
+@keyframes wegdermee {
+    0%{
+        opacity:1;
+    }
+    30%{
+        opacity: 0;
+    }
+    50%{
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+        visibility:hidden;
+        position:absolute;
+    }
+}
+
+body.blauw section > .blauw{
+    opacity:0;
+    visibility:hidden;
+    position:absolute;
+
+    animation: terugzetten 1s 1s forwards;
+}
+
+@keyframes terugzetten{
+    0%{
+        opacity:0;
+        visibility: visible;
+        display: block;
+        position:relative;
+    }
+    100%{
+        opacity:1;
+        visibility: visible;
+        display: block;
+        position:relative;
+    }
+}
+
+body.geel section > .geel{
+    opacity:1;
+    visibility:hidden;
+    position:absolute;
+
+    animation: terugzetten 1s 1s forwards;
+}
+
+
+body.groen section > .groen{
+    opacity:0;
+    visibility:hidden;
+    position:absolute;
+
+    animation: terugzetten 1s 1s forwards;
+}
+
+body.geel{
+    background-color: yellow;
+}
+
+body.blauw{
+    background-color: blue;
+}
+
+body.groen{
+    background-color: green;
+}
+
+body.geel button:first-of-type, body.blauw button:nth-of-type(2), body.groen button:nth-of-type(3)   {
+    transition: ease 1s;
+    width:20vw;
+    position: relative;
+}
+
+body button:first-of-type, body button:nth-of-type(2),body button:nth-of-type(3)  {
+    transition: ease 1s;
+    width:6vw;
+    position: relative;
+}
+
+body.geel h1, body.groen h1, body.blauw h1{
+    transition: ease 1s;
+    background-color: white;
+    color:black;
+}
+
