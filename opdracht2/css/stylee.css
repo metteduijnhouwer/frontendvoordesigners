@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+body {
+    font-family: 'Roboto';
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/* bovenste balk */
+
+.titel {
+    font-size: 13px;
+}
+
+.titel > img {
+    width: 27px;
+    height: 27px;
+    margin-left: 87%;
+    padding-top: 15px;
+}
+
+span {
+    padding-left: 20px;
+
+}
+
+
+/* carousel */
+
+.carousel {
+    padding-left: 0;
+    left: 0;
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    margin-right: auto;
+    justify-content: center;
+    position: absolute;
+}
+
+.carousel .inner {
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease-in;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+}
+
+/* tekst in plaatje */
+
+h1 {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.tekstplaatje {
+    margin-top: 150px;
+}
+
+.tekstplaatje p {
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+
+/* pijtljes */
+
+.verder::after,
+.terug::after {
+    content: '>';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: white;
+    font-size: 20px;
+    width: 1em;
+    font-weight: bold;
+    font-family: sans-serif;
+    transform: translateY(-50%);
+    line-height: 3em;
+    box-sizing: border-box;
+    padding: 0 0.2em;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.terug::after {
+    left: 0;
+    content: '<';
+}
+
+.terug:hover::after,
+.verder:hover::after {
+    opacity: 1;
+}
+
+
+/* instellingen */
+
+.instellingen {
+    height: 0;
+    transition: height 1s 0.5s ease;
+    position: inherit;
+    background-color: darkslategray;
+    color: white;
+    padding-left: 20px;
+}
+
+
+body.uitgeklapt .instellingen {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background-color: darkslategray;
+    padding-left: 20px;
+}
+
+fieldset {
+    border: none;
+    display: inline-block;
+    padding-left:0;
+}
+
+.instellingen h2 {
+    padding-top: 20px;
+}
+
+body.uitgeklapt .titel > img {
+    animation: draaien 1s alternate ease;
+
+}
+
+@keyframes draaien {
+    0% {
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+label {
+    text-decoration: none;
+    display: flex;
+    padding: 0;
+}
+
+legend{
+    font-size: 20px;
+}
+
+
+.slider legend {
+    font-size: 20px;
+    margin-left: -400px;
+}
+
+.slider {
+    display: inline-block;
+    width: 40%;
+    margin-left: 400px;
+    text-align: center;
+    position: absolute;
+    border-left: solid 1px grey;
+    height: 150px;
+}
+
+.slider input {
+    width: 90%;
+}
+
+.instellingen button:first-of-type {
+    background-color: red;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+.instellingen button:nth-of-type(2) {
+    background-color: green;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+.instellingen button:nth-of-type(3) {
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+.instellingen button:nth-of-type(4) {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+}
+
+.instellingen button {
+    margin-left: 20px;
+    margin-top:20px;
+}
+
+/* informatie onder de carousel */
+
+.informatie {
+    position: relative;
+    margin-top: 560px;
+    text-align: center;
+    border-top: solid darkgrey 1px;
+    border-bottom: solid darkgrey 1px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    color: darkslategray;
+}
+
+body.uitgeklapt.rood h1 {
+    color: red;
+}
+
+body.uitgeklapt.groen h1 {
+    color: green;
+}
+
+body.uitgeklapt.zwart h1 {
+    color: black;
+}
+
+

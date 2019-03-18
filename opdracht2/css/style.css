@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800');
+
+:root {
+    --default-color-pakje: #f1f1f1;
+    --default-color-accessoires: #fff;
+    --default-color-bandjes: #eb6850;
+    --default-color-maan: #f29c4c;
+    --default-color-lucht: #0f4464;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--default-color-lucht);
+}
+
+/***************/
+/* STYLE PANEL */
+/***************/
+.filter{
+    height: 100vh;
+    width: 20rem;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 2rem 1.5rem;
+    position: absolute;
+    z-index: 1000;
+    transition: left 2s;
+    left: 0;
+}
+.filter.weg{
+    left: -20rem;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+
+/* handvat */
+.uitklappen{
+    position: absolute;
+    left: 20rem;
+    top: 2rem;
+    width: 3rem;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem;
+}
+
+.uitklappen p{
+    color: white;
+    transform: rotate(-90deg);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    top: 1.5rem;
+    left: 0.2rem;
+    position: absolute;
+}
+
+/* set opties */
+article{
+    margin-bottom: 3.5rem;
+}
+
+.filter section:not(:first-of-type) {
+    padding: 2rem 0 0;
+    border-top: 2px solid white;
+}
+
+h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* de opties */
+[type="radio"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+label{
+    position: relative;
+    line-height: 2rem;
+    padding: 0 0 0 3rem;
+}
+
+label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    top: 0.5rem;
+    border-radius: 50%;
+}
+
+/*pakje*/
+#pakjeWit         + label::before{ background: #f1f1f1; }
+#pakjeBeige     + label::before{ background: #e4d0bc; }
+#pakjeRoze         + label::before{ background: #ffe4f1; }
+/*accessoires*/
+#accessoireWit     + label::before{ background: #fff; }
+#accessoireGeel + label::before{ background: #EFAF3D; }
+#accessoireRoze + label::before{ background: #bca9c4; }
+/*bandje*/
+#bandjeRood     + label::before{ background: #eb6850; }
+#bandjeOranje     + label::before{ background: #e28c40; }
+#bandjePaars     + label::before{ background: #6a3972; }
+/*maan*/
+#maanOranje     + label::before{ background: #f29c4c; }
+#maanRoze         + label::before{ background: #e6c1da; }
+#maanRood         + label::before{ background: #982d2d; }
+/*lucht*/
+#luchtBlauw     + label::before{ background: #0f4464; }
+#luchtPaars     + label::before{ background: #908290; }
+#luchtRood         + label::before{ background: #622d2d; }
+
+/*pakje*/
+input#pakjeWit[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #cccccc; }
+input#pakjeBeige[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #c4ac93; }
+input#pakjeRoze[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #e2bfcf; }
+/*accessoires*/
+input#accessoireWit[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #e0e0e0; }
+input#accessoireGeel[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #d09327; }
+input#accessoireRoze[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #9d89a5; }
+/*bandje*/
+input#bandjeRood[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #bf4630; }
+input#bandjeOranje[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #bf712c; }
+input#bandjePaars[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #4f2c55; }
+/*maan*/
+input#maanOranje[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #d6863b; }
+input#maanRoze[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #c6a6bc; }
+input#maanRood[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #571313; }
+/*lucht*/
+input#luchtBlauw[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #062a40; }
+input#luchtPaars[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #696269; }
+input#luchtRood[type=radio]:checked + label::before{ box-shadow: 0 0 0 .25em #451e1e; }
+
+
+/***********/
+/* DE MAAN */
+/***********/
+.maan {
+    position: absolute;
+    right: 20vw;
+    top: 7%;
+    background-color: var(--default-color-maan);
+    width: 25.750rem;
+    height: 25.750rem;
+    border-radius: 50%;
+    box-shadow: inset -1em -1em 0.2em 0.3em rgba(0, 0, 0, 0.10);
+}
+
+/* strepen op de maan */
+.maan div {
+    position: absolute;
+    border-radius: 10rem;
+}
+
+.een{
+    width: 20%;
+    height: 6%;
+    top: 20%;
+    left: 35%;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.twee{
+    top: 30%;
+    left: 47%;
+    width: 9.4rem;
+    height: 8%;
+    background-color: rgba(255, 234, 213, 0.38);
+}
+
+.drie{
+    width: 30%;
+    height: 9%;
+    top: 38%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.vier{
+    top: 49%;
+    left: 56%;
+    width: 44%;
+    height: 7%;
+    background-color: rgba(255, 234, 213, 0.38);
+}
+
+.vijf{
+    top: 56%;
+    left: 25%;
+    width: 65%;
+    height: 12%;
+    background-color: rgba(255, 234, 213, 0.38);
+}
+
+.zes{
+    top: 68%;
+    left: 7%;
+    width: 45%;
+    height: 10%;
+    background-color: rgba(255, 234, 213, 0.38);
+}
+
+.zeven{
+    top: 71%;
+    left: 20%;
+    width: 15%;
+    height: 6%;
+    background-color: rgba(255, 255, 255, 0.38);
+}
+
+.acht{
+    width: 20%;
+    height: 6%;
+    top: 78%;
+    right: 12%;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+
+/**************/
+/* DE MAANMAN */
+/**************/
+.maanmanContainer{
+    position: absolute;
+    top: 25%;
+    right: 25%;
+    padding: 4rem 0 0 10rem;
+    width: 32rem;
+    height: 40rem;
+    transform: rotate(-25deg) scale(1);
+    border-radius: 20rem;
+    z-index: 999;
+
+    transition: background 5s;
+
+    animation-name:neerstorten;
+    animation-duration:5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+.maanmanContainer.neerstorten{
+    animation-play-state: running;
+}
+
+@keyframes neerstorten {
+    from{
+        top: 25%;
+        right: 25%;
+        transform: rotate(-25deg) scale(1);
+    }
+    to{
+        top: -3%;
+        right: calc(20% + (17.75rem / 2) - (30rem / 2) );
+        transform: rotate(25deg) scale(.02);
+    }
+}
+
+.geland .maanmanContainer{
+    background: rgba(0, 0, 0, 0.57);
+}
+
+.geland .maanmanContainer::before{
+    position: absolute;
+    content: "";
+    background: rgba(0, 0, 0, 0.14);
+    width: 5rem;
+    height: 5rem;
+    box-shadow: 0px 0px 40px 40px rgba(0, 0, 0, 0.14);
+    border-radius: 20rem;
+    top: 15rem;
+    left: 12rem;
+
+    /*animation-name: plof;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-timing-function: ease-out;*/
+}
+
+@keyframes plof {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(10);
+    }
+}
+
+.klaar .maanmanContainer::before{
+    background: transparant;
+}
+
+/* de man */
+.maanman{
+    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    top: 6rem;
+    left: 5rem;
+    animation-name: zweef;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes zweef {
+    from{
+        transform: translate(0em, -2em);
+    }
+    to{
+        transform: translate(-1.5em, 2em);
+    }
+}
+
+.maanman.stop{
+    animation-play-state: paused;
+}
+
+/* het hoofd */
+.hoofd{
+    position: absolute;
+    z-index: 200;
+    top: 0.5rem;
+    left: 5rem;
+    width: 10rem;
+    height: 9rem;
+    background-color: var(--default-color-accessoires);
+    border-radius: 50% 50% 3.750rem 3.750rem;
+}
+
+.glas{
+    background-color: #666766;
+    width: 80%;
+    height: 62%;
+    margin: auto;
+    top: 1rem;
+    position: relative;
+    border-radius: 50% 50% 25px 25px;
+}
+
+.reflectie{
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: #919290;
+    border-radius: 50%;
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+}
+
+/* het bovenlichaam */
+.bovenlichaam{
+    position: absolute;
+    z-index: 100;
+    top: 9rem;
+    left: 5rem;
+    border-radius: 0 0 0.063em 0.063em;
+    width: 10rem;
+    height: 10rem;
+    background: var(--default-color-pakje);
+}
+
+.knopjes{
+    width: 6rem;
+    height: 2.5rem;
+    background-color: var(--default-color-accessoires);
+    position: relative;
+    left: 20%;
+    top: 25%;
+    border-radius: 0.625em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:.25em;
+}
+
+.knop {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+}
+.knop:first-of-type{
+    background-color: #4e6fb4;
+}
+.knop:nth-of-type(2){
+    background-color: #f6d060;
+}
+.knop:last-of-type{
+    background-color: #eb6850;
+}
+
+.gat{
+    width: 2rem;
+    height: 2rem;
+    background-color:#aaabad;
+    border-radius: 50%;
+    position: absolute;
+    top: 63%;
+    left: 40%;
+}
+
+.zuurstof .deelEen{
+    position: absolute;
+    z-index: 500;
+    left: 4.47rem;
+    top: 7.2rem;
+    width: 7rem;
+    height: 6rem;
+    border-left: 1rem #4f6cb2 solid;
+    border-bottom: 1rem #4f6cb2 solid;
+    border-radius: 0rem 0rem 0rem 4rem;
+}
+
+.zuurstof .deelTwee{
+    position: absolute;
+    left: 11rem;
+    top: 4.2rem;
+    width: 9rem;
+    height: 9rem;
+    border-top: 1rem #4f6cb2 solid;
+    border-right: 1rem #4f6cb2 solid;
+    border-bottom: 1rem #4f6cb2 solid;
+    border-radius: 0rem 7rem 4rem 0rem;
+}
+
+/* de bovenarmen */
+.bovenarm{
+    width: 6rem;
+    height: 3rem;
+    background: var(--default-color-pakje);
+    position: absolute;
+    z-index: 90;
+    top: 8.5rem;
+}
+.rechter.bovenarm{
+    left: 14rem;
+    border-radius: 0 10em 10em 0;
+    transform: rotate(-15deg);
+}
+.linker.bovenarm{
+    left: 0;
+    border-radius: 10em 0 0 10em;
+    transform: rotate(15deg);
+}
+
+/* de onderarmen */
+.onderarm{
+    width: 3rem;
+    height: 5rem;
+    top: 6.1rem;
+    background: var(--default-color-pakje);
+    position: absolute;
+    border-radius: 0 0 10rem 10rem;
+}
+
+.rechter.onderarm{
+    left: 16.71rem;
+    transform: rotate(-15deg);
+}
+
+.linker.onderarm{
+    left: 0.3rem;
+    transform-origin: bottom left 1em;
+    transform: translate(-0.6em, -0.45em) rotate(15deg);
+    animation: linkerarm .7s infinite alternate ease-in-out;
+}
+
+@keyframes linkerarm {
+    from{
+    transform: translate(-0.6em, -0.45em) rotate(15deg);
+    }
+    to{
+    transform: translate(-0.25em, -0.45em) rotate(0deg);
+    }
+}
+
+.mouw{
+    width: 100%;
+    height: 0.5rem;
+    background: var(--default-color-bandjes);
+    position: relative;
+}
+
+.hand{
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    top: -3rem;
+    border-radius: 10em 10em 0 0;
+    background: var(--default-color-accessoires);
+}
+
+.duim{
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: var(--default-color-accessoires);
+    top: -1rem;
+}
+.linker.onderarm .duim{
+    left: 2.9rem;
+    border-radius: 0 50% 50% 0;
+}
+.rechter.onderarm .duim{
+    left: -0.9rem;
+    border-radius: 50% 0 0 50%;
+}
+
+/* de benen */
+.been {
+    position: absolute;
+    height: 9rem;
+    width: 4.4rem;
+    top: 18rem;
+}
+
+.linker.been {
+    left: 3.975rem;
+    transform-origin:left 1em;
+    animation: linkerbeen 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes linkerbeen {
+    from{
+        transform: translate(1em, -.5em) rotate(0deg);
+    }
+    to{
+        transform: translate(1em, -.5em) rotate(20deg);
+    }
+}
+
+.rechter.been {
+    left: 11.69rem;
+    transform-origin: right 1em;
+    animation: rechterbeen 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes rechterbeen {
+    from{
+        transform: translate(-1em, -.5em) rotate(0deg);
+    }
+    to{
+        transform: translate(-1em, -.5em) rotate(-20deg);
+    }
+}
+
+.bovenbeen {
+    height: 7rem;
+    width: 4rem;
+    z-index: 90;
+    background: var(--default-color-pakje);
+    left: 0.2rem;
+    position: absolute;
+}
+
+.voet{
+    position: absolute;
+    bottom: 0.1rem;
+    width: 100%;
+    height: 2rem;
+    background: var(--default-color-accessoires);
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-bottom: 5px solid var(--default-color-bandjes);
+}
+
+/* de rugzak */
+.maanman .rugzak{
+    position: absolute;
+    top: 7rem;
+    left: 4rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 10%;
+    background-color: #aaabad;
+}
+
+/* de bubbels */
+.bubbel {
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #fff;
+}
+.bubbel:first-of-type{
+    left: 75%;
+    top: 5%;
+}
+.bubbel:nth-of-type(2){
+    left: 50%;
+    top: 10%;
+}
+.bubbel:nth-of-type(3){
+    left: 40%;
+    top: 40%;
+}
+.bubbel:nth-of-type(4){
+    left: 63%;
+    top: 63%;
+}
+.bubbel:last-of-type{
+    left: 48%;
+    top: 78%;
+}
