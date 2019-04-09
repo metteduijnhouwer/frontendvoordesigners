@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+/* bovenkantje */
+
+h1 {
+    margin: 0;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    color: #4E3068;
+}
+
+.bovenkant > img {
+    width: 100%;
+    box-shadow: 0px 13px 5px 0px rgba(159, 98, 202, 1);
+    height: 50px;
+}
+
+.bovenkant div {
+    width: 100%;
+    height: 50px;
+    background-color: #4E3068;
+    margin-top: -4px;
+}
+
+.bovenkant {
+    margin: 0;
+}
+
+
+ul {
+    list-style-type: none;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin:30px;
+}
+
+
+li a {
+    color: #4E3068;
+    text-align: center;
+    text-decoration: none;
+}
+
+li{
+    text-align: center;
+    margin:0px 40px;
+}
+
+li a:hover{
+    border-bottom: 2px solid #4E3068;
+    padding-bottom:8px;
+}
+
+.kopje{
+    background-color: #4E3068;
+    text-align: center;
+    padding:15px;
+    color:white;
+}
+
+.kopje h2{
+    font-size: 24px;
+    padding:20px;
+    margin-left:30px;
+    text-align: center;
+}
+
+
+
+/* filter menu */
+
+.klapje img {
+    width: 30px;
+    height: 15px;
+    margin-top:10px;
+    margin-left:80px;
+}
+
+body.uitklap .filteren {
+    height: 300px;
+    transition: 0.4s;
+    width:70%;
+    display: flex;
+    justify-content: center;
+}
+
+body.uitklap .filteren button {
+    display: flex;
+}
+
+.filteren {
+    background-color: #A062CA;
+    height: 0px;
+    transition: 0.4s;
+    margin-top: 20px;
+    margin-left:120px;
+    width:70%;
+}
+
+.filteren button {
+    display: none;
+}
+
+body.uitklap .klapje img {
+    transition: 0.5s;
+    transform: rotate(180deg);
+}
+
+
+.invisible {
+    animation: example 2s forwards;
+
+}
+
+@keyframes example {
+    0%{
+        opacity:1;
+    }
+    30%{
+        opacity: 0;
+    }
+    50%{
+        opacity:0;
+    }
+    100%{
+        opacity:0;
+        visibility:hidden;
+        position:absolute;
+    }
+}
+.klapje{
+    border:solid 1px lightgray;
+    width:200px;
+    margin-top:20px;
+    margin-left:80px;
+    display: flex;
+}
+
+
+
+.klapje h2{
+    font-size: 14px;
+    padding-left:20px;
+    font-weight: 100;
+
+}
+
+.filteren button{
+    width:130%;
+    height:40px;
+    color: #4E3068;
+    background-color: white;
+}
+
+.filteren h3{
+    display: none;
+}
+
+body.uitklap .filteren h3{
+    display: block;
+    color:white;
+}
+
+.knopjes{
+    display: flex;
+}
+
+body.uitklap .knopjes div{
+    margin-left:40px;
+    justify-content: center;
+    border-right:solid 2px lightgray;
+    padding-right:30px;
+    margin-top:40px;
+    height:200px;
+}
+
+.knopjes div button{
+    margin-bottom:10px;
+    width:140px;
+    background-color: #BF3D5E;
+    color:white;
+    border:0;
+}
+
+
+body.uitklap .knopjes div button:hover{
+    background-color: #8D3D5E;
+}
+
+/* make up */
+
+article {
+    height: 400px;
+    margin-top: 30px;
+    padding: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: block;
+    text-align: center;
+}
+
+body section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+
+article h2 {
+    font-size: 15px;
+    position: relative;
+    text-align: center;
+    color: #4E3068;
+}
+
+
+section img {
+    border: lightgray 1px solid;
+    padding: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+}
+
+
+section img:hover + h2 + p {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-bottom: 20%;
+}
+
+section img:hover {
+    opacity: 0;
+    position: absolute;
+}
+
+
+section article p {
+    display: none;
+}
+
+section article span {
+    font-size: 20px;
+    font-family: 'Roboto', serif;
+    font-weight: 200;
+    color:#4E3068;
+}
