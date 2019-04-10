@@ -15,7 +15,7 @@ Ook is mijn filter menu in en uitklapbaar. Dit doe ik door een class toe te voeg
 
 
 -- Mijn interactie verbeteringen --
-Ik heb 4 verbeteringen gemaakt na het testen:
+Ik heb 4 verbeteringen gemaakt na het testen. Mijn oude website voor de veranderingen staat bij opdracht 3 v1. De verbeteringen die hieronder zijn beschrijven zijn verwerkt bij het mapje v2:
 
 1. Eerst had ik het filter menu standaard ingeklapt zodat de gebruiker het zelf kon uitklappen als hij of zij het nodig had. Maar ik kwam er na het testen achter dat het handiger is als het menu wel al uitgeklapt is, omdat het menu met alle categorieën een belangrijk menu is en het is een beetje moeilijk te vinden voor zo iets belangrijks.
 
