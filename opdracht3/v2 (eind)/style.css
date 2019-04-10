@@ -214,7 +214,7 @@ body.uitklap .knopjes div{
 }
 
 
-body.uitklap .knopjes div button:hover{
+body .knopjes div button:hover{
     background-color: #8D3D5E;
 }
 
