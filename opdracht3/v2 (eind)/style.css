@@ -219,6 +219,10 @@ body .knopjes div button:hover{
     background-color: #8D3D5E;
 }
 
+button:hover{
+       background-color: #8D3D5E;
+}
+
 /* make up */
 
 article {
